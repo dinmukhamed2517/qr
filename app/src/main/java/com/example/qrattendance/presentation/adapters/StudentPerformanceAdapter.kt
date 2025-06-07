@@ -35,33 +35,30 @@ class StudentPerformanceAdapter: ListAdapter<StudentPerformanceResponse, BaseStu
     inner class ReceiveItemHolder(binding: ItemStudentPerformanceBinding) : BaseStudentPerformanceItemViewHolder<ItemStudentPerformanceBinding>(binding) {
         override fun bindView(item: StudentPerformanceResponse) {
             with(binding) {
-                // Set course title and professor information
                 courseText.text = item.title ?: "No title"
                 teacherText.text = "Professor: ${item.professor_subject.firstOrNull()?.users?.name ?: "Unknown"}"
                 reportTypeText.text = "Reporting type: ${item.reporting_type ?: "N/A"}"
 
-                // Handle student performance data
                 if (item.student_performance.isNotEmpty()) {
                     val performance = item.student_performance.first()
 
-                    // Use safe calls to handle null values
                     val mt = performance.point1 ?: 0
                     val et = performance.point2 ?: 0
+                    val avg = mt + et
                     val finalExam = performance.exam_mark ?: 0
 
-                    // Calculating average and total points
-                    val avg = (mt + et) / 2 // Assuming avg is the simple average of mt and et
-                    val totalPoint = mt + et + finalExam
 
-                    // Set the text for various fields
+                    val totalPoints = (finalExam * 0.4 + avg * 0.6).toInt()
+                    val finalResult = getFinalMarkForPoints(totalPoints)
+
+
                     mtText.text = mt.toString()
                     etText.text = et.toString()
                     avgText.text = avg.toString()
                     finalText.text = finalExam.toString()
-                    ttlText.text = String.format("%.2f", totalPoint.toFloat())
-
+                    ttlText.text = totalPoints.toString()
+                    resultText.text = finalResult
                 } else {
-                    // If there's no performance data, show "N/A"
                     mtText.text = "N/A"
                     etText.text = "N/A"
                     avgText.text = "N/A"
@@ -69,6 +66,25 @@ class StudentPerformanceAdapter: ListAdapter<StudentPerformanceResponse, BaseStu
                     ttlText.text = "N/A"
                     resultText.text = "N/A"
                 }
+            }
+        }
+
+        // The function to determine the final result based on total points
+        private fun getFinalMarkForPoints(points: Int): String {
+            return when {
+                points >= 95 -> "Excellent"
+                points >= 90 -> "Excellent"
+                points >= 85 -> "Good"
+                points >= 80 -> "Good"
+                points >= 75 -> "Good"
+                points >= 70 -> "Good"
+                points >= 65 -> "Satisfactory"
+                points >= 60 -> "Satisfactory"
+                points >= 55 -> "Satisfactory"
+                points >= 50 -> "Satisfactory"
+                points >= 25 -> "Unsatisfactory"
+                points >= 0 -> "Unsatisfactory"
+                else -> "Invalid input"
             }
         }
     }
