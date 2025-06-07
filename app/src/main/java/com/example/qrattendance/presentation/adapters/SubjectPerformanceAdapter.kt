@@ -35,16 +35,22 @@ class SubjectPerformanceAdapter(
 
         if (student.student_performance.isNotEmpty()) {
             val performance = student.student_performance.first()
-            holder.midterm.text = performance.point1?.toString() ?: "N/A"
-            holder.endterm.text = performance.point2?.toString() ?: "N/A"
-            holder.avg.text = performance.point3?.toString() ?: "N/A"
-            holder.final.text = performance.exam_mark?.toString() ?: "N/A"
 
-            val ttl = (performance.point1 ?: 0) +
-                    (performance.point2 ?: 0) +
-                    (performance.point3 ?: 0) +
-                    ((performance.exam_mark ?: 0) * 0.4)
-            holder.total.text = "%.2f".format(ttl)
+            val mt = performance.point1 ?: 0
+            val et = performance.point2 ?: 0
+            val avg = (mt + et) / 2
+            val finalExam = performance.exam_mark ?: 0
+
+
+            val totalPoints = (finalExam * 0.4 + avg * 0.6).toInt()
+
+
+            holder.midterm.text = mt.toString()
+            holder.endterm.text  = et.toString()
+            holder.avg.text = avg.toString()
+            holder.final.text  = finalExam.toString()
+            holder.total.text  = totalPoints.toString()
+
         } else {
             holder.midterm.text = "N/A"
             holder.endterm.text = "N/A"

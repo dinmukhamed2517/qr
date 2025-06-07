@@ -44,7 +44,7 @@ class StudentPerformanceAdapter: ListAdapter<StudentPerformanceResponse, BaseStu
 
                     val mt = performance.point1 ?: 0
                     val et = performance.point2 ?: 0
-                    val avg = mt + et
+                    val avg = (mt + et) / 2
                     val finalExam = performance.exam_mark ?: 0
 
 
