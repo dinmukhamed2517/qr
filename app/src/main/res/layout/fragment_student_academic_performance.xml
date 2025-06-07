@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loading_view"
+        android:layout_width="match_parent"
+        android:elevation="10dp"
+        android:visibility="gone"
+        android:background="@color/white"
+        android:layout_height="match_parent">
+
+
+        <ProgressBar
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/textView4"
+        style="@style/Inter.Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:text="My academic performance"
+        android:textColor="@color/main_color"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView5"-->
+<!--        style="@style/Inter"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:text="Discipline:"-->
+<!--        android:textColor="@color/secondary_text"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView4" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView6"-->
+<!--        style="@style/Inter"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:text="Group:"-->
+<!--        android:textColor="@color/secondary_text"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView5" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView7"-->
+<!--        style="@style/Inter"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:text="Date:"-->
+<!--        android:textColor="@color/secondary_text"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView6" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/discipline_text"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        style="@style/Inter"-->
+<!--        android:textColor="@color/black"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/textView5"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/textView5"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/textView5"-->
+<!--        tools:text="Startups and entrepreneurship" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/group_text"-->
+<!--        style="@style/Inter"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:textColor="@color/black"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/textView6"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/textView6"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/textView6"-->
+<!--        tools:text="IT1" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/date_text"-->
+<!--        style="@style/Inter"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:textColor="@color/black"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/textView7"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/textView7"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView6"-->
+<!--        tools:text="September" />-->
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/student_performance_recycler"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="20dp"
+        android:layout_height="0dp"
+        tools:listitem="@layout/item_student_performance"
+        app:layout_constraintBottom_toTopOf="@id/materialButton"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButton"
+        style="@style/Inter.SemiBold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/main_color"
+        android:text="Download report"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:cornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

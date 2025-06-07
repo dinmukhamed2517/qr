@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:id="@+id/teacher_nav_graph"
+    app:startDestination="@id/attendanceTrackingFragment">
+
+    <fragment
+        android:id="@+id/academicPerformanceFragment"
+        android:name="com.example.qrattendance.presentation.screens.teacher.AcademicPerformanceFragment"
+        android:label="AcademicPerformanceFragment" />
+    <fragment
+        android:id="@+id/checkingAttendanceFragment"
+        android:name="com.example.qrattendance.presentation.screens.teacher.CheckingAttendanceFragment"
+        android:label="CheckingAttendanceFragment" >
+        <action
+            android:id="@+id/action_checkingAttendanceFragment_to_qrShowingFragment"
+            app:destination="@id/qrShowingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/qrShowingFragment"
+        android:name="com.example.qrattendance.presentation.screens.teacher.QrShowingFragment"
+        android:label="QrShowingFragment" />
+    <fragment
+        android:id="@+id/attendanceTrackingFragment"
+        android:name="com.example.qrattendance.presentation.screens.teacher.AttendanceTrackingFragment"
+        android:label="AttendanceTrackingFragment" />
+    <fragment
+        android:id="@+id/profileFragment2"
+        android:name="com.example.qrattendance.presentation.screens.ProfileFragment"
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment2_to_login_nav_graph"
+            app:destination="@id/login_nav_graph" />
+    </fragment>
+    <include app:graph="@navigation/login_nav_graph" />
+</navigation>

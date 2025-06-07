@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/attendanceTrackingFragment"
+        android:enabled="true"
+        android:icon="@drawable/home_icon"
+        android:title="Главная"
+        />
+    <item
+        android:id="@+id/checkingAttendanceFragment"
+        android:enabled="true"
+        android:icon="@drawable/qr_icon"
+        android:title="Сканировать QR"
+        />
+
+    <item
+        android:id="@+id/academicPerformanceFragment"
+        android:enabled="true"
+        android:icon="@drawable/table_icon"
+        android:title="Таблица"/>
+
+
+    <item
+        android:id="@+id/profileFragment2"
+        android:enabled="true"
+        android:icon="@drawable/profile_icon"
+        android:title="Профиль">
+    </item>
+</menu>

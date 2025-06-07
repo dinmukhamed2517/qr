@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/student_nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.qrattendance.presentation.screens.student.HomeFragment"
+        android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/profileFragment3"
+        android:name="com.example.qrattendance.presentation.screens.ProfileFragment"
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment3_to_login_nav_graph"
+            app:destination="@id/login_nav_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/qrScannerFragment2"
+        android:name="com.example.qrattendance.presentation.screens.student.QrScannerFragment"
+        android:label="QrScannerFragment" />
+    <fragment
+        android:id="@+id/studentAcademicPerformanceFragment"
+        android:name="com.example.qrattendance.presentation.screens.student.StudentAcademicPerformanceFragment"
+        android:label="StudentAcademicPerformanceFragment" />
+    <include app:graph="@navigation/login_nav_graph" />
+</navigation>

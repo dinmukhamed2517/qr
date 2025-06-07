@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Inter">
+        <item name="fontFamily">@font/inter_regular</item>
+    </style>
+    <style name="Inter.SemiBold">
+        <item name="fontFamily">@font/inter_semibold</item>
+    </style>
+    <style name="Inter.Bold">
+        <item name="fontFamily">@font/inter_bold</item>
+    </style>
+    <style name="Inter.ExtraBold">
+        <item name="fontFamily">@font/inter_extrabold</item>
+    </style>
+    <style name="HintTextWhite">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+</resources>

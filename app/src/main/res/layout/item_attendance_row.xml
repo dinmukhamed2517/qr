@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/student_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text ="Ashtai Almas"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        style="@style/Inter"
+        android:layout_weight="1"/>
+    <TextView
+        android:id="@+id/attended"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        tools:text ="2"
+        android:textColor="@color/black"
+        style="@style/Inter"
+        android:layout_weight="0.8"/>
+    <TextView
+        android:id="@+id/absent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text ="0"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        style="@style/Inter"
+        android:layout_weight="0.8"/>
+    <TextView
+        android:id="@+id/excused"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text ="0"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        style="@style/Inter"
+        android:layout_weight="0.8"/>
+
+    <TextView
+        android:id="@+id/all"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        tools:text ="2"
+        android:textColor="@color/black"
+        style="@style/Inter"
+        android:layout_weight="0.8"/>
+
+</LinearLayout>
